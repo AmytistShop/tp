@@ -1,0 +1,33 @@
+# TeleportTimeVanish config
+# Placeholders:
+# {player} - who did the action
+# {target} - target player (teleport)
+# {world}  - world name
+# {time}   - "day" or "night"
+
+prefix: "&8[&bTTV&8]&r "
+
+teleport:
+  enabled: true
+  # Detect teleports "to a player" by looking for a player very close to the teleport destination.
+  detect-radius: 1.0
+  send-to-teleporter: true
+  send-to-target: true
+  teleporter-message: "{prefix}&aТы телепортировался к &e{target}&a."
+  target-message: "{prefix}&e{player}&a телепортировался к тебе."
+
+time:
+  enabled: true
+  day-ticks: 1000
+  night-ticks: 13000
+  sender-message: "{prefix}&aТы установил время: &e{time}&a (&7{world}&a)."
+  broadcast-message: "{prefix}&e{player}&a установил время: &e{time}&a (&7{world}&a)."
+  broadcast: true
+
+vanish:
+  enabled: true
+  hide-player: true
+  potion-invisibility: true
+  enabled-message: "{prefix}&aVanish включён."
+  disabled-message: "{prefix}&cVanish выключен."
+  keep-hidden-on-join: true

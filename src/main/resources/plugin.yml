@@ -1,0 +1,28 @@
+name: TeleportTimeVanish
+version: 1.0.0
+main: me.crabcraft.ttv.TeleportTimeVanishPlugin
+api-version: '1.21'
+author: CrabCraft
+description: Teleport messages + /day /night + /vanish with configurable messages.
+
+commands:
+  day:
+    description: Set daytime (1000) in your current world.
+    usage: /day
+    permission: ttv.time
+  night:
+    description: Set nighttime (13000) in your current world.
+    usage: /night
+    permission: ttv.time
+  vanish:
+    description: Toggle vanish (invisibility + hide from players).
+    usage: /vanish
+    permission: ttv.vanish
+
+permissions:
+  ttv.time:
+    default: op
+  ttv.vanish:
+    default: op
+  ttv.teleportnotify:
+    default: true
