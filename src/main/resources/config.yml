@@ -1,15 +1,15 @@
 # TeleportTimeVanish config
 # Placeholders:
 # {player} - who did the action
-# {target} - target player (teleport)
+# {target} - target player (teleport/gm)
 # {world}  - world name
 # {time}   - "day" or "night"
+# {mode}   - gamemode name (SURVIVAL/CREATIVE/ADVENTURE)
 
 prefix: "&8[&bTTV&8]&r "
 
 teleport:
   enabled: true
-  # Detect teleports "to a player" by looking for a player very close to the teleport destination.
   detect-radius: 1.0
   send-to-teleporter: true
   send-to-target: true
@@ -31,3 +31,23 @@ vanish:
   enabled-message: "{prefix}&aVanish включён."
   disabled-message: "{prefix}&cVanish выключен."
   keep-hidden-on-join: true
+
+gamemode:
+  enabled: true
+  # If true, also accept ".Nick" as the same player name (useful with Geyser/Floodgate)
+  accept-dot-prefix: true
+
+  # Messages:
+  self-message: "{prefix}&aТвой режим теперь: &e{mode}&a."
+  changer-message: "{prefix}&aТы сменил режим игроку &e{target}&a на &e{mode}&a."
+  target-message: "{prefix}&aТвой режим изменён на &e{mode}&a игроком &e{player}&a."
+  not-found: "{prefix}&cИгрок не найден: &e{target}&c."
+  no-permission-other: "{prefix}&cНет прав менять режим другим."
+
+clearchat:
+  enabled: true
+  # lines broadcasted to clear chat (Bedrock and Java both)
+  lines: 120
+  sender-message: "{prefix}&aТы очистил чат."
+  broadcast-message: "{prefix}&e{player}&a очистил чат."
+  broadcast: true

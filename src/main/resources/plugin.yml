@@ -1,9 +1,9 @@
 name: TeleportTimeVanish
-version: 1.0.0
+version: 1.1.0
 main: me.crabcraft.ttv.TeleportTimeVanishPlugin
 api-version: '1.21'
 author: CrabCraft
-description: Teleport messages + /day /night + /vanish with configurable messages.
+description: Teleport messages + /day /night + /vanish + /gm + /clearchat with configurable messages.
 
 commands:
   day:
@@ -18,11 +18,23 @@ commands:
     description: Toggle vanish (invisibility + hide from players).
     usage: /vanish
     permission: ttv.vanish
+  gm:
+    description: Toggle/set gamemode. /gm, /gm s|c|a, /gm <mode> <player>, /gm <player>
+    usage: /gm [s|c|a|survival|creative|adventure] [player]
+    permission: ttv.gm
+  clearchat:
+    description: Clear chat for everyone.
+    usage: /clearchat
+    permission: ttv.clearchat
 
 permissions:
   ttv.time:
     default: op
   ttv.vanish:
+    default: op
+  ttv.gm:
+    default: op
+  ttv.clearchat:
     default: op
   ttv.teleportnotify:
     default: true
